@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Detalhes do Chef</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="fecharModal()">Fechar</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <div class="page-background">
+
+    <div class="containerModal">
+      <ion-card class="background-card">
+        <img class="card-img" alt="Silhouette of mountains" src="{{selectedImage}}" width="200" height="150" />
+        <ion-card-header>
+          <ion-card-title>{{selectedNome}}</ion-card-title>
+          <hr class="horizontal-bar">
+        </ion-card-header>
+
+
+        <ion-card-content>
+          <p class="detalhesModal"><b>DETALHES DO PRATO: </b>{{selectedDepartamento}}</p>
+          <hr class="horizontal-bar">
+          <div>
+            <ion-card class="background-card">
+              <ion-card-header class="media_Tamnho">
+                Média: {{mediaAvaliado}}
+              </ion-card-header>
+              <ion-card-content>
+                Número de Classificações: {{totalAvaliado}}
+              </ion-card-content>
+
+            </ion-card>
+            <ion-card class="background-card">
+              <ion-card-content class="pb-0" *ngFor="let star of stars">
+                <div class="bar-estrelas">
+                  {{ star }}
+                  <ion-icon name="star"> </ion-icon>
+                  <ion-progress-bar [value]="progress[star] / maxProgress"></ion-progress-bar>
+                </div>
+              </ion-card-content>
+            </ion-card>
+          </div>
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </div>
+</ion-content>
