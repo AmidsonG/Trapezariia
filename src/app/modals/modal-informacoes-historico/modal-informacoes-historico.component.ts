@@ -19,6 +19,7 @@ export class ModalInformacoesHistoricoComponent  implements OnInit {
   selectedNome: string = '';
   selectedImage: string = '';
   idAvaliado: number =0;
+  dataPrato: String = '';
 
   constructor(private modalController: ModalController,private httpService: HttpService) { }
 

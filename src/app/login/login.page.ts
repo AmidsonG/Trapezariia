@@ -34,12 +34,14 @@ export class LoginPage implements OnInit {
       const response = await this.httpService.validarLogin(this.pin).toPromise();
 
       if (response && response.length > 0) {
-        // O PIN existe na API, o login é válido
-
+  
         this.errorMessage = '';
 
          // Armazena o ID do usuário no serviço HttpService
         this.httpService.setUserId(response[0].id);
+        localStorage.setItem('usernome', response[0].nome);
+        
+        
 
         // Verifique se o ID do usuário foi armazenado corretamente
         const userId = this.httpService.getUserId();

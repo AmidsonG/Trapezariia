@@ -8,7 +8,7 @@ import { HttpService } from '../services/http.service';
 })
 export class WelcomePage implements OnInit {
   public usuarios: any[]=[];
-  username: string = '';
+  username: String = '';
   userId = 0;
   
   params = {} as any;
@@ -20,19 +20,9 @@ export class WelcomePage implements OnInit {
    }
 
   ngOnInit() {
-    this.params.page = 0;
-    this.getUsuario();
+    this.username =  String( localStorage.getItem('usernome'))
   }
   
-  getUsuario(event?:any){
-    this.params.page +=1;
-    this.httpService.getUsuario(this.username).subscribe({
-      next: (res:any)=>{
-        
-        this.usuarios.push(...res);
 
-      },
-    })
-  }
 
 }

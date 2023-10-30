@@ -27,8 +27,9 @@ export class Tab1Page implements OnInit {
   maxProgress = 10;
   isModalOpen = false;
   params = {} as any;
+  public dataPratos: any; 
 
-  async openModal(image: string, title: string, description: string, id: number) {
+  async openModal(image: string, title: string, description: string, id: number, dataP: String) {
     const modal = await this.modalController.create({
       component: ModalDetalhesChefComponent,
       
@@ -37,6 +38,7 @@ export class Tab1Page implements OnInit {
         selectedNome: title,
         selectedDepartamento: description,
         idAvaliado: id,
+        dataPrato: dataP,
         isModalChefe : false
       },
       cssClass: 'custom-modal'
@@ -44,6 +46,8 @@ export class Tab1Page implements OnInit {
     await modal.present();
     const { data } = await modal.onDidDismiss();
   }
+
+  
 
   constructor(private router: Router,
     private httpService: HttpService,
@@ -57,19 +61,9 @@ export class Tab1Page implements OnInit {
 
   ngOnInit() {
     this.params.page = 0;
-    this.getPratos();
     this.getPratosDoDia();
   }
 
-  getPratos(event?: any) {
-    this.params.page += 1;
-    this.httpService.getPratos(this.params).subscribe({
-      next: (res: any) => {
-        this.pratos.push(...res);
-
-      },
-    })
-  }
 
   getPratosDoDia() {
     const dataHoje = new Date().toISOString().substring(0, 10); // Obtém a data de hoje no formato "YYYY-MM-DD"

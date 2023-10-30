@@ -29,3 +29,9 @@
 .custom-modal{
     padding: 0 !important;
 }
+::ng-deep {
+    .inner-scroll.scroll {
+        padding: 0 !important;
+    }    
+
+}

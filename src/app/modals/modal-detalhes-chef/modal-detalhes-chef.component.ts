@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { HttpService } from '../../services/http.service';
 import { AlertController } from '@ionic/angular';
-
+import * as moment from 'moment';
 
 
 
@@ -33,6 +33,7 @@ export class ModalDetalhesChefComponent implements OnInit {
   public chefsAvaliados: any;
   public pratosAvaliados : any;
   public alertButtons = ['OK'];
+  dataPrato: String = '';
 
   setRating(rating: number) {
     this.estrelasSelecionadas = rating;
@@ -51,6 +52,10 @@ export class ModalDetalhesChefComponent implements OnInit {
   // Método para fechar o modal
   fecharModal() {
     this.modalController.dismiss();
+  }
+  
+  transform(value: string): string {
+    return moment(value).format('YYYY-MM-DD HH:mm:ss');
   }
 
   async presentAlert() {

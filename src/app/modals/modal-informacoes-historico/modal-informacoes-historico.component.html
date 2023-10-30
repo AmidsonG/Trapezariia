@@ -14,6 +14,8 @@
         <img class="card-img" alt="Silhouette of mountains" src="{{selectedImage}}" width="200" height="150" />
         <ion-card-header>
           <ion-card-title>{{selectedNome}}</ion-card-title>
+          <ion-card-subtitle> Data Refeição: {{ dataPrato.substr(0, 10)}}</ion-card-subtitle>
+          
           <hr class="horizontal-bar">
         </ion-card-header>
 
@@ -21,6 +23,7 @@
         <ion-card-content>
           <p class="detalhesModal"><b>DETALHES DO PRATO: </b>{{selectedDepartamento}}</p>
           <hr class="horizontal-bar">
+
           <div>
             <ion-card class="background-card">
               <ion-card-header class="media_Tamnho">
@@ -29,7 +32,6 @@
               <ion-card-content>
                 Número de Classificações: {{totalAvaliado}}
               </ion-card-content>
-
             </ion-card>
             <ion-card class="background-card">
               <ion-card-content class="pb-0" *ngFor="let star of stars">

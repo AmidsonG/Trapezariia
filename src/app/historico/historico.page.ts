@@ -17,10 +17,12 @@ export class HistoricoPage implements OnInit {
   selectedImage!: String;
   selectedTitle!: String;
   selectedDescription!: String;
+  dataPrato!: String;
 
   mediaAvaliado: number = 0.0;
   totalAvaliado: number =0;
   public pratosAvaliados: any;
+  public dataPratos: any;
 
   stars = [5, 4, 3, 2, 1];
   progress: Record<number, number> = { 5: 0, 4: 0, 3: 0, 2: 0, 1: 0 };
@@ -30,7 +32,7 @@ export class HistoricoPage implements OnInit {
     this.progress[numeroDeEstrelas]++;
   }
 
-  async openModal(image: string, title: string, description: string, id: number) {
+  async openModal(image: string, title: string, description: string, id: number, dataP: String) {
     const modal = await this.modalController.create({
       component: ModalInformacoesHistoricoComponent,
       componentProps: {
@@ -38,6 +40,7 @@ export class HistoricoPage implements OnInit {
         selectedNome: title,
         selectedDepartamento: description,
         idAvaliado: id,
+        dataPrato: dataP,
         isModalChefe : false
       }
     });
@@ -48,17 +51,18 @@ export class HistoricoPage implements OnInit {
   //Lista de objectos ou JSON que trás os pratos, os nomes e as imagens 19-105
 
 
-//Variavel que recebe os pratos
+  //Variavel que recebe os pratos
   public pratos: any[] = [];
   params = {} as any;
 
 
-  constructor(private router: Router, private httpService: HttpService, private modalController: ModalController) {
-  }
+  constructor(private router: Router, private httpService: HttpService, private modalController: ModalController) {}
+
   ngOnInit() {
     this.params.page = 0;
     this.getPratos();
   }
+
 
   getPratos(event?:any){
     this.params.page +=1;
@@ -73,11 +77,11 @@ export class HistoricoPage implements OnInit {
   closeHistorico(){
     this.router.navigate(['/tabs/tab1']);
   }
+
+
   setOpen(isOpen: boolean) {
     this.isModalOpen = isOpen;
   }
-
-
 
 }
 
