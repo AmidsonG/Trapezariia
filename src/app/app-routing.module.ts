@@ -30,7 +30,12 @@ const routes: Routes = [
   {
     path: 'historico',
     loadChildren: () => import('./historico/historico.module').then( m => m.HistoricoPageModule)
-  }
+  },  {
+    path: 'politica-privacidade',
+    loadChildren: () => import('./politica-privacidade/politica-privacidade.module').then( m => m.PoliticaPrivacidadePageModule)
+  },
+
+
 ];
 @NgModule({
   imports: [

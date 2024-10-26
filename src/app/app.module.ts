@@ -9,6 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ModalDetalhesChefComponent } from './modals/modal-detalhes-chef/modal-detalhes-chef.component';
 
+
 @NgModule({
   declarations: [AppComponent],
 
