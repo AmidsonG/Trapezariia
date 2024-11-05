@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  baseUrl: 'http://emhtcellotyoasg.clouds2africa.com:1648/', 
+  baseUrl: 'https://trapezaria.duty.ao/', 
   pratos:'pratos/',
   funcionario:'funcionario/',
   usuario: 'usuario/',
