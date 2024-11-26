@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Trapezaria</string>
+    <string name="title_activity_main">Trapezaria</string>
+    <string name="package_name">com.trapezaria.app</string>
+    <string name="custom_url_scheme">com.trapezaria.app</string>
+</resources>
