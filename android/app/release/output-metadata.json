@@ -4,7 +4,7 @@
         "type": "APK",
         "kind": "Directory"
     },
-    "applicationId": "io.ionic.starter1",
+    "applicationId": "ionic.starter",
     "variantName": "release",
     "elements": [{
         "type": "SINGLE",

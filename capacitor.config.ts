@@ -1,7 +1,7 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'io.ionic.starter1',
+  appId: 'ionic.starter',
   appName: 'Trapezaria',
   webDir: 'www',
   server: {
