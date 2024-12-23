@@ -17,7 +17,7 @@
 
   <!-- Remove Splash Automatic -->
   <style name="AppTheme.NoActionBarLaunch" parent="Theme.AppCompat.DayNight.NoActionBar">
-    <item name="android:background">@drawable/logo_sem_fundo</item>
+    <item name="android:background">@drawable/ic_launcher_background</item>
   </style>
 
 </resources>
