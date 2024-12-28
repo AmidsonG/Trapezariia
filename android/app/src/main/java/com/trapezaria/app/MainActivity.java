@@ -1,4 +1,4 @@
-package com.trapezaria.app;
+package com.trapezaria.newapp;
 
 import com.getcapacitor.BridgeActivity;
 
